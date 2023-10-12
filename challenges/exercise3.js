@@ -2,11 +2,7 @@ export function findSmallNums(nums) {
   if (!nums) throw new Error("nums is required");
 
   const smallNums = nums.filter(function (num) {
-    if (num < 1) {
-      return true;
-    } else {
-      return false;
-    }
+    return num < 1;
   });
 
   return smallNums;
@@ -17,11 +13,7 @@ export function findNamesBeginningWith(names, char) {
   if (!char) throw new Error("char is required");
 
   const namesBeginningWith = names.filter(function (name) {
-    if (name[0] === char) {
-      return true;
-    } else {
-      return false;
-    }
+    return name[0] === char;
   });
 
   return namesBeginningWith;
@@ -31,11 +23,7 @@ export function findVerbs(words) {
   if (!words) throw new Error("words is required");
 
   const verbs = words.filter(function (word) {
-    if (word.includes("to ")) {
-      return true;
-    } else {
-      return false;
-    }
+    return word.includes("to ");
   });
 
   return verbs;
@@ -45,11 +33,7 @@ export function getIntegers(nums) {
   if (!nums) throw new Error("nums is required");
 
   const ints = nums.filter(function (num) {
-    if (num % 1 === 0) {
-      return true;
-    } else {
-      return false;
-    }
+    return num % 1 === 0;
   });
 
   return ints;
@@ -80,11 +64,7 @@ export function findSentencesContaining(sentences, str) {
   if (!str) throw new Error("str is required");
 
   const sentencesContaining = sentences.filter(function (sentence) {
-    if (sentence.toLowerCase().includes(str.toLowerCase())) {
-      return true;
-    } else {
-      return false;
-    }
+    return sentence.toLowerCase().includes(str.toLowerCase());
   });
 
   return sentencesContaining;
