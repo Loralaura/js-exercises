@@ -3,11 +3,11 @@ export function findSmallNums(nums) {
 
   let smallNums = [];
 
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[i] < 1) {
-      smallNums.push(nums[i]);
+  nums.forEach(function (num) {
+    if (num < 1) {
+      smallNums.push(num);
     }
-  }
+  });
   return smallNums;
 }
 
@@ -17,11 +17,11 @@ export function findNamesBeginningWith(names, char) {
 
   let namesBeginningWith = [];
 
-  for (let i = 0; i < names.length; i++) {
-    if (names[i][0] === char) {
-      namesBeginningWith.push(names[i]);
+  names.forEach(function (name) {
+    if (name[0] === char) {
+      namesBeginningWith.push(name);
     }
-  }
+  });
   return namesBeginningWith;
 }
 
@@ -30,11 +30,11 @@ export function findVerbs(words) {
 
   let verbs = [];
 
-  for (let i = 0; i < words.length; i++) {
-    if (words[i].includes("to ")) {
-      verbs.push(words[i]);
+  words.forEach(function (word) {
+    if (word.includes("to ")) {
+      verbs.push(word);
     }
-  }
+  });
   return verbs;
 }
 
@@ -43,11 +43,11 @@ export function getIntegers(nums) {
 
   let ints = [];
 
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[i] % 1 === 0) {
-      ints.push(nums[i]);
+  nums.forEach(function (num) {
+    if (num % 1 === 0) {
+      ints.push(num);
     }
-  }
+  });
   return ints;
 }
 
@@ -55,9 +55,9 @@ export function getCities(users) {
   if (!users) throw new Error("users is required");
   let cities = [];
 
-  for (let i = 0; i < users.length; i++) {
-    cities.push(users[i].data.city.displayName);
-  }
+  users.forEach(function (user) {
+    cities.push(user.data.city.displayName);
+  });
   return cities;
 }
 
@@ -65,10 +65,9 @@ export function getSquareRoots(nums) {
   if (!nums) throw new Error("nums is required");
   let squareRoots = [];
 
-  //Math.round((num + Number.EPSILON) * 100) / 100
-  for (let i = 0; i < nums.length; i++) {
-    squareRoots.push(Math.round(Math.sqrt(nums[i]) * 100) / 100);
-  }
+  nums.forEach(function (num) {
+    squareRoots.push(Math.round(Math.sqrt(num) * 100) / 100);
+  });
   return squareRoots;
 }
 
@@ -77,11 +76,11 @@ export function findSentencesContaining(sentences, str) {
   if (!str) throw new Error("str is required");
   let sentencesContaining = [];
 
-  for (let i = 0; i < sentences.length; i++) {
-    if (sentences[i].toLowerCase().includes(str.toLowerCase())) {
-      sentencesContaining.push(sentences[i]);
+  sentences.forEach(function (sentence) {
+    if (sentence.toLowerCase().includes(str.toLowerCase())) {
+      sentencesContaining.push(sentence);
     }
-  }
+  });
   return sentencesContaining;
 }
 
@@ -89,15 +88,14 @@ export function getLongestSides(triangles) {
   if (!triangles) throw new Error("triangles is required");
   let longestSides = [];
 
-  //Math.round((num + Number.EPSILON) * 100) / 100
-  for (let i = 0; i < triangles.length; i++) {
-    let longestSide = triangles[i][0];
-    for (let j = 1; j < triangles[i].length; j++) {
-      if (triangles[i][j] > longestSide) {
-        longestSide = triangles[i][j];
+  triangles.forEach(function (triangle) {
+    let longestSide = triangle[0];
+    triangle.forEach(function (side) {
+      if (side > longestSide) {
+        longestSide = side;
       }
-    }
+    });
     longestSides.push(longestSide);
-  }
+  });
   return longestSides;
 }
