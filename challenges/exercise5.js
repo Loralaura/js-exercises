@@ -31,9 +31,7 @@ export const sumMultiples = (arr) => {
 export const isValidDNA = (str) => {
   if (str === undefined) throw new Error("str is required");
 
-  /*Fun fact, some DNA models also include N to denote a gap in DNA.
-   * I have not included this because it complicates things for the person marking this.
-   */
+  //Fun fact, some DNA models also include N to denote a gap in DNA.
   return /^[CGATcgat]*$/.test(str);
 };
 
@@ -73,11 +71,20 @@ export const getComplementaryDNA = (str) => {
 
 /**
  * This function should receive a number and return true/false depending on whether it is a prime number or not. A prime number is a number that can only be divided evenly by 1 and itself (for example, 7)
- * @param {Number} n
+ * @param {Number} num
  * @returns {Boolean}
  */
-export const isItPrime = (n) => {
-  if (n === undefined) throw new Error("n is required");
+export const isItPrime = (num) => {
+  if (num === undefined) throw new Error("n is required");
+
+  let isPrime = num > 1 ? true : false;
+
+  for (let i = 2; i < num; i++) {
+    if (num % i === 0) {
+      isPrime = false;
+    }
+  }
+  return isPrime;
 };
 
 /**
@@ -87,13 +94,24 @@ export const isItPrime = (n) => {
  *   ["foo", "foo", "foo"],
  *   ["foo", "foo", "foo"]
  * ]
- * @param {Number} n
+ * @param {Number} num
  * @param {Any} fill
  * @returns {Array}
  */
-export const createMatrix = (n, fill) => {
-  if (n === undefined) throw new Error("n is required");
+export const createMatrix = (num, fill) => {
+  if (num === undefined) throw new Error("num is required");
   if (fill === undefined) throw new Error("fill is required");
+
+  let matrix = [];
+
+  for (let i = 0; i < num; i++) {
+    let tempArr = [];
+    for (let j = 0; j < num; j++) {
+      tempArr.push(fill);
+    }
+    matrix.push(tempArr);
+  }
+  return matrix;
 };
 
 /**

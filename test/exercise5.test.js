@@ -52,27 +52,45 @@ describe("getComplementaryDNA", () => {
     expect(getComplementaryDNA("t")).toBe("A");
   });
 });
-/*
+
 describe("isItPrime", () => {
-  test("returns the total of the numbers in all sub arrays", () => {
-    const arrs = [[1, 2, 3], [6, 3, 1], [1], [9, 10], [3, 5]];
-    expect(isItPrime(arrs)).toBe(44);
+  test("returns false is number is not prime", () => {
+    expect(isItPrime(6)).toBe(false);
+    expect(isItPrime(10)).toBe(false);
+    expect(isItPrime(12)).toBe(false);
+  });
+  test("returns true if number is a prime", () => {
+    expect(isItPrime(5)).toBe(true);
+    expect(isItPrime(7)).toBe(true);
+    expect(isItPrime(13)).toBe(true);
+  });
+  test("returns false if 1 (1 is not a prime)", () => {
+    expect(isItPrime(1)).toBe(false);
+  });
+
+  test("returns false if number is less than 1", () => {
+    expect(isItPrime(0)).toBe(false);
+    expect(isItPrime(-1)).toBe(false);
   });
 });
 
 describe("createMatrix", () => {
-  test("returns an array with the first and last items swapped", () => {
-    expect(createMatrix([1, 2])).toEqual([2, 1]);
-    expect(createMatrix([1, 2, 3])).toEqual([3, 2, 1]);
-    expect(createMatrix([1, 2, 3, 4])).toEqual([4, 2, 3, 1]);
+  test("returns matrix with correct number of values", () => {
+    expect(createMatrix(3, "baa")).toEqual([
+      ["baa", "baa", "baa"],
+      ["baa", "baa", "baa"],
+      ["baa", "baa", "baa"],
+    ]);
+    expect(createMatrix(2, "moo")).toEqual([
+      ["moo", "moo"],
+      ["moo", "moo"],
+    ]);
   });
-
-  test("makes no difference when the array length is < 2", () => {
-    expect(createMatrix([1])).toEqual([1]);
-    expect(createMatrix([])).toEqual([]);
+  test("Returns [] if num is 0", () => {
+    expect(createMatrix(0, "any")).toEqual([]);
   });
 });
-
+/*
 describe("areWeCovered", () => {
   test("returns true if any of the properties of an object contain the specified string", () => {
     const obj1 = {
