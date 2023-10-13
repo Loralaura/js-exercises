@@ -86,66 +86,22 @@ describe("createMatrix", () => {
       ["moo", "moo"],
     ]);
   });
-  test("Returns [] if num is 0", () => {
+  test("Returns [] if num is 0 or less", () => {
     expect(createMatrix(0, "any")).toEqual([]);
   });
 });
-/*
+
 describe("areWeCovered", () => {
-  test("returns true if any of the properties of an object contain the specified string", () => {
-    const obj1 = {
-      name: "LINNMON",
-      description: "Small round table",
-      price: 31.89,
-      store: "Warrington",
-      code: 12872,
-    };
-    expect(areWeCovered(obj1, "table")).toBe(true);
-
-    // Note that the objects provided to the function could have any keys/values
-    const obj2 = {
-      product_name: "Sparkle n Shine Dishwasher Tablets",
-      price: 1.99,
-      location: "Hulme",
-      discounted: false,
-      available: true,
-    };
-    expect(areWeCovered(obj2, "Dishwasher")).toBe(true);
-  });
-
-  test("returns false if none of the properties of an object contain the specified string", () => {
-    const obj1 = {
-      name: "LINNMON",
-      description: "Small round table",
-      price: 31.89,
-      store: "Warrington",
-      code: 12872,
-    };
-    expect(areWeCovered(obj1, "chair")).toBe(false);
-
-    // Note that the objects provided to the function could have any keys/values
-    const obj2 = {
-      product_name: "Sparkle n Shine Dishwasher Tablets",
-      price: 1.99,
-      location: "Hulme",
-      discounted: false,
-      available: true,
-    };
-    expect(areWeCovered(obj2, "Carpet Cleaner")).toBe(false);
-  });
-
-  test("The search string should not be case sensitive", () => {
-    const obj1 = {
-      name: "LINNMON",
-      description: "Small round table",
-      price: 31.89,
-      store: "Warrington",
-      code: 12872,
-    };
-
-    expect(areWeCovered(obj1, "warrington")).toBe(true);
-    expect(areWeCovered(obj1, "linnmon")).toBe(true);
-    expect(areWeCovered(obj1, "Liverpool")).toBe(false);
+  test("returns true enough staff are scheduled (3)", () => {
+    const staff = [
+      { name: "Sally", rota: ["Monday", "Tuesday", "Friday"] },
+      { name: "Pedro", rota: ["Saturday", "Sunday", "Tuesday", "Wednesday"] },
+      { name: "David", rota: ["Saturday", "Sunday", "Tuesday", "Wednesday"] },
+      { name: "Josie", rota: ["Thursday", "Sunday", "Monday", "Wednesday"] },
+      { name: "Eddie", rota: ["Tuesday", "Sunday", "Monday", "Wednesday"] },
+    ];
+    expect(areWeCovered(staff, "Monday")).toBe(true);
+    expect(areWeCovered(staff, "Thursday")).toBe(false);
+    expect(areWeCovered(staff, "Sunday")).toBe(true);
   });
 });
-*/
