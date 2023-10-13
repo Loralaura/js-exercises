@@ -1,5 +1,7 @@
 # ✨ JavaScript Practice ✨
 
+### Prologue
+
 Before we begin covering the content of the programme we'd like you to complete some warmup exercises in JavaScript, similar to those you completed in order to get into the programme. This will get you back into the flow of programming, help you explore some new language features and build familiarity with the programming environment. And hopefully you'll have some fun too!
 
 This repository contains 7 sets of exercises which will help you to build your ability and confidence with JavaScript ahead of the start of the programme. Completing all sets would be ideal, but please ensure you complete at least the first 5.
