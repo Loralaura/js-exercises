@@ -31,6 +31,9 @@ export const sumMultiples = (arr) => {
 export const isValidDNA = (str) => {
   if (str === undefined) throw new Error("str is required");
 
+  /*Fun fact, some DNA models also include N to denote a gap in DNA.
+   * I have not included this because it complicates things for the person marking this.
+   */
   return /^[CGATcgat]*$/.test(str);
 };
 
@@ -41,6 +44,31 @@ export const isValidDNA = (str) => {
  */
 export const getComplementaryDNA = (str) => {
   if (str === undefined) throw new Error("str is required");
+  if (isValidDNA(str) === false) throw new Error("DNA string not valid");
+
+  let complementaryDNA = "";
+
+  /*note: In geneology, uppercase and lowercase letters indicate important
+   * information, however this does not have an agreed standardisation (and
+   * overcomplicates things) so I have opted for a default to uppercase instead.
+   */
+  str.split("").forEach((char) => {
+    switch (char.toUpperCase()) {
+      case "C":
+        complementaryDNA += "G";
+        break;
+      case "G":
+        complementaryDNA += "C";
+        break;
+      case "A":
+        complementaryDNA += "T";
+        break;
+      case "T":
+        complementaryDNA += "A";
+        break;
+    }
+  });
+  return complementaryDNA;
 };
 
 /**

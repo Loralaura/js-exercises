@@ -40,16 +40,19 @@ describe("isValidDNA", () => {
     expect(isValidDNA("cgatttagc")).toBe(true);
   });
 });
-/*
+
 describe("getComplementaryDNA", () => {
   test("reverses the digits of a number", () => {
-    expect(getComplementaryDNA(5)).toBe(5);
-    expect(getComplementaryDNA(104)).toBe(401);
-    expect(getComplementaryDNA(12345)).toBe(54321);
-    expect(getComplementaryDNA(100)).toBe(1); // No leading 0 necessary
+    expect(getComplementaryDNA("CGAT")).toBe("GCTA");
+    expect(getComplementaryDNA("TCGA")).toBe("AGCT");
+  });
+  test("should not be case sensitive", () => {
+    expect(getComplementaryDNA("acgt")).toBe("TGCA");
+    expect(getComplementaryDNA("CGat")).toBe("GCTA");
+    expect(getComplementaryDNA("t")).toBe("A");
   });
 });
-
+/*
 describe("isItPrime", () => {
   test("returns the total of the numbers in all sub arrays", () => {
     const arrs = [[1, 2, 3], [6, 3, 1], [1], [9, 10], [3, 5]];
