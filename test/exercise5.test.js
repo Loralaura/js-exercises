@@ -21,7 +21,7 @@ describe("sumMultiples", () => {
     expect(sumMultiples([7, 8, 1, 2])).toBe(0);
   });
 });
-/*
+
 describe("isValidDNA", () => {
   test("returns true if a string is a valid DNA sequence (only contains Cs, Gs, As, Ts)", () => {
     expect(isValidDNA("CGATTAGCACAC")).toBe(true);
@@ -34,8 +34,13 @@ describe("isValidDNA", () => {
     expect(isValidDNA("CGATTAGCACAQ")).toBe(false);
     expect(isValidDNA("QCGATAGCACAT")).toBe(false);
   });
+  test("should not be case sensitive", () => {
+    expect(isValidDNA("z")).toBe(false);
+    expect(isValidDNA("CGATTAGCACa")).toBe(true);
+    expect(isValidDNA("cgatttagc")).toBe(true);
+  });
 });
-
+/*
 describe("getComplementaryDNA", () => {
   test("reverses the digits of a number", () => {
     expect(getComplementaryDNA(5)).toBe(5);
